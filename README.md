@@ -4,4 +4,5 @@ Second version of Alfredo.
 (keyword) (Argument)
 # Example
 hello=:5:
+
 out hello
