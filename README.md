@@ -3,4 +3,5 @@ Second version of Alfredo.
 # Grammar
 (keyword) (Argument)
 # Example
-out "This was made in Alfredo 2"
+hello=:5:
+out hello
