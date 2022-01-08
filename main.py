@@ -1,15 +1,23 @@
 from sys import exit,argv
+from datetime import datetime
+from platform import *
 f = open(argv[1])
 var = {}
 lineNum = 0
-pos=0
+now = datetime.now()
+os = platform.system()
 for line in f:
     line = line.replace('\t','')
     line = line.replace('\n','')
+    var.update({'filename':f.name})
+    var.update({"time":now.strftime("%H:%M")})
+    var.update({"date":now.strftime('%d/%m/%Y')})
+    var.update({"version":"2.0"})
+    var.update({"filename":f.name})
+    var.update({"os":os.name})
+    tokens = line.split(':')
     lineNum+=1
-    if '\t' in line:
-        pos+=1
-    elif '+' in line:
+    if '+' in line:
         a = int(line.split('+')[0])
         b = int(line.split('+')[1])
         op = a+b
